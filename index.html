@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        grid-gap: 5px;
+      }
+      body,
+      html {
+        display: grid;
+        max-width: 100%;
+        max-height: 100% !important;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+        font-family: arial;
+        color: #000;
+        /* text-align: center; */
+      }
+
+      .container {
+        display: grid;
+        height: 100%;
+        grid-template-rows: 50px auto 50px;
+      }
+
+      header {
+        display: grid;
+        grid-template-columns: 50% repeat(3, 1fr);
+      }
+      .siteTitle {
+        background-color: orange;
+      }
+      .nav-2 {
+        width: 100%;
+        /* width: 33%; */
+        background-color: violet;
+      }
+
+      main {
+        display: grid;
+        grid-template-areas:
+          'posttitle posttitle sidebar'
+          'postmeta maincontent sidebar'
+          'postmeta maincontent sidebar'
+          'postmeta maincontent ads'
+          'postmeta maincontentimg ads'
+          'postmeta maincontentimg other'
+          'postmeta maincontentimg other';
+        grid-template-columns: 30% auto 30%;
+        grid-template-rows: repeat(6, 1fr);
+      }
+      main .post-title {
+        grid-area: posttitle;
+        background-color: cadetblue;
+      }
+      main .post-meta {
+        grid-area: postmeta;
+        background-color: lightgreen;
+      }
+      main .main-content {
+        grid-area: maincontent;
+        background-color: grey;
+      }
+      main .main-content-img {
+        grid-area: maincontentimg;
+        background-color: yellowgreen;
+      }
+      main .sidebar {
+        grid-area: sidebar;
+        background-color: orangered;
+      }
+      main .ads {
+        grid-area: ads;
+        background-color: green;
+      }
+      main .other {
+        grid-area: other;
+        background-color: magenta;
+      }
+      footer {
+        display: grid;
+        background-color: rosybrown;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="siteTitle">Set Title</div>
+        <div class="nav-2">Nav 1</div>
+        <div class="nav-2">Nav 2</div>
+        <div class="nav-2">Nav 3</div>
+      </header>
+      <main>
+        <div class="post-title">Post Title</div>
+        <div class="post-meta">Post Meta</div>
+        <div class="main-content">Main Content</div>
+        <div class="main-content-img">Main Content Image</div>
+        <div class="sidebar">Side Bar</div>
+        <div class="ads">Ads</div>
+        <div class="other">Other Stuff</div>
+      </main>
+      <footer>&copy; 2018 footer</footer>
+    </div>
+  </body>
+</html>
